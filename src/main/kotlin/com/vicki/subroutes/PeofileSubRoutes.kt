@@ -50,7 +50,7 @@ fun Route.getSingleUserRoute(db: Database) {
                 if (mobile?.length == 10) {
                     val user = getUser(db, mobile)
                 } else {
-                    call.respond(HttpStatusCode.OK, ResponseData(false, "", data = JsonObject(emptyMap())))
+                    call.respond(HttpStatusCode.OK, ResponseData(false, "Enter Valid Mobile Number", data = JsonObject(emptyMap())))
                     return@get
                 }
             }
