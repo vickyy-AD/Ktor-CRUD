@@ -34,5 +34,5 @@ dependencies {
     implementation ("mysql:mysql-connector-java:8.0.28")
     implementation("org.ktorm:ktorm-core:3.6.0")
 
-
+    implementation("com.google.firebase:firebase-admin:9.2.0")
 }

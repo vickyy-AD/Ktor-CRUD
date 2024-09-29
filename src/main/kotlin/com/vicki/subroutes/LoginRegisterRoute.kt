@@ -56,7 +56,7 @@ fun Route.loginRoute(db: Database) {
                             return@post
                         } else {
                             call.respond(
-                                HttpStatusCode.NotFound,
+                                HttpStatusCode.OK,
                                 ResponseData(false, "Enter Valid Password", data = JsonObject(emptyMap()))
                             )
                             return@post
@@ -65,14 +65,14 @@ fun Route.loginRoute(db: Database) {
 
                     } else {
                         call.respond(
-                            HttpStatusCode.NotFound,
+                            HttpStatusCode.OK,
                             ResponseData(false, "User Not Found", data = JsonObject(emptyMap()))
                         )
                         return@post
                     }
                 } else {
                     call.respond(
-                        HttpStatusCode.BadRequest,
+                        HttpStatusCode.OK,
                         ResponseData(false, "Enter Proper Data", data = JsonObject(emptyMap()))
                     )
                     return@post
@@ -81,7 +81,7 @@ fun Route.loginRoute(db: Database) {
 
             } else {
                 call.respond(
-                    HttpStatusCode.BadRequest,
+                    HttpStatusCode.OK,
                     ResponseData(false, "Enter Proper Data", data = JsonObject(emptyMap()))
                 )
                 return@post
@@ -140,7 +140,7 @@ fun Route.registerRoute(db: Database) {
                         }
                     } else {
                         call.respond(
-                            HttpStatusCode.BadRequest,
+                            HttpStatusCode.OK,
                             ResponseData(false, "Enter Proper Data", data = JsonObject(emptyMap()))
                         )
                         return@post
@@ -157,13 +157,13 @@ fun Route.registerRoute(db: Database) {
 
             } else {
                 call.respond(
-                    HttpStatusCode.BadRequest,
+                    HttpStatusCode.OK,
                     ResponseData(false, "Enter Proper Data", data = JsonObject(emptyMap()))
                 )
                 return@post
             }
         } catch (e: Exception) {
-            call.respond(HttpStatusCode.BadRequest, ResponseData(false, e.message, JsonObject(emptyMap())))
+            call.respond(HttpStatusCode.OK, ResponseData(false, e.message, JsonObject(emptyMap())))
             return@post
         }
     }

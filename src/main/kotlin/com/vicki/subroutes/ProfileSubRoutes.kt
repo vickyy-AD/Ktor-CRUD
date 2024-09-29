@@ -1,7 +1,6 @@
 package com.vicki.subroutes
 
 import com.vicki.tables.userProfile
-import com.vicki.userModel
 import com.vicki.utility.ResponseData
 import io.ktor.http.*
 import io.ktor.server.application.*
@@ -13,7 +12,6 @@ import kotlinx.serialization.json.JsonPrimitive
 import kotlinx.serialization.json.contentOrNull
 import kotlinx.serialization.json.jsonPrimitive
 import org.ktorm.database.Database
-import org.ktorm.dsl.eq
 import org.ktorm.dsl.from
 import org.ktorm.dsl.*
 
