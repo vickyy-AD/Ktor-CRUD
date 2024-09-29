@@ -3,6 +3,7 @@ package com.vicki.plugins
 import com.vicki.utility.ResponseData
 import com.vicki.subroutes.authRoute
 import com.vicki.subroutes.profileRoute
+import com.vicki.subroutes.sendMessageRoute
 import com.vicki.tables.userProfile
 import com.vicki.userModel
 import io.ktor.http.*
@@ -18,7 +19,7 @@ fun Application.configureRouting(db: Database) {
 
             authRoute(db)
             profileRoute(db)
-
+            sendMessageRoute()
 
             get("/table") {
 
